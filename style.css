@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    font-family: "Quicksand";
+}
+.calendar{
+    padding: 20px;
+    box-shadow: 0 0 12px #cccc;
+}
+.month-week{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    color: #c333ff;
+}
+.month-week span{
+    font-size: 13px;
+    margin-left: 5px;
+    background-color: #c333ff;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.month-week span:last-child{
+    background-color: transparent;
+    color: #c333ff;
+    border: 1px solid #c333ff;
+
+}
+.weeks{
+    
+    margin-bottom: 20px;
+}
+.weeks span{
+    padding: 20px;
+    color: #c333ff;
+}
+.days{
+    display: flex;
+
+}
+.days span{
+    width: 14.30%;
+    text-align: center;
+    padding: 30px 20px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: .5s;
+}
+.days span::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background-color: #c333ff;
+    border-radius: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: .5s;
+}
+.days span:not(.next-month):hover::before{
+    opacity: 1;
+}
